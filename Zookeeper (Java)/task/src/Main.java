@@ -125,16 +125,25 @@ public class Main {
                 It looks like we will soon have more rabbits!""";
 
         String[] animals = {camel, lion, deer, goose, bat, rabbit};
+        String result;
 
-        System.out.println("Please enter the number of the habitat you would like to view:");
-        int s = scanner.nextInt();
-        switch (s) {
-            case 0 -> printAnimal(animals, 0);
-            case 1 -> printAnimal(animals, 1);
-            case 2 -> printAnimal(animals, 2);
-            case 3 -> printAnimal(animals, 3);
-            case 4 -> printAnimal(animals, 4);
-            case 5 -> printAnimal(animals, 5);
+        while (true) {
+            System.out.println("Please enter the number of the habitat you would like to view:");
+            result = scanner.nextLine();
+
+            if (result.equalsIgnoreCase("exit")) {
+                System.out.println("See you later!");
+                break;
+            }
+
+            switch (result) {
+                case "0" -> printAnimal(animals, 0);
+                case "1" -> printAnimal(animals, 1);
+                case "2" -> printAnimal(animals, 2);
+                case "3" -> printAnimal(animals, 3);
+                case "4" -> printAnimal(animals, 4);
+                case "5" -> printAnimal(animals, 5);
+            }
         }
     }
 
